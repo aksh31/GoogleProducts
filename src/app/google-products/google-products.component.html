@@ -1,0 +1,51 @@
+<section>
+    <div class="head mb-5 p-5">
+        <div class="col-sm-12 text-center">
+            <h1>
+                <span class="text-primary">G</span>
+                <span class="text-danger">o</span>
+                <span class="text-warning">o</span>
+                <span class="text-primary">g</span>
+                <span class="text-success">l</span>
+                <span class="text-danger">e</span>
+                Graveyard
+            </h1>
+        </div>
+    </div>
+    <div class="container-fluid px-5">
+        <div class="row mb-5">
+            <div class="col-sm-12">
+                <h2>Products Killed By
+                    <span class="text-primary">G</span>
+                    <span class="text-danger">o</span>
+                    <span class="text-warning">o</span>
+                    <span class="text-primary">g</span>
+                    <span class="text-success">l</span>
+                    <span class="text-danger">e</span>!
+                </h2>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-sm-4 offset-sm-2">
+                <input type="search" placeholder="Search here" #input (input)="onSerachHandler(input.value)" class="form-control">
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" #option (change)="onSelectHandler(option.value)">
+                    <option value="All">All</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="service">Service</option>
+                    <option value="app">Application</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid px-5">
+        <div class="row head p-4">
+            <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let product of productsArray">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<div class="card pt-4 mb-4">
+    <span class="label text-white px-3 py-2" 
+    [ngClass]="{'bg-primary' : product.type === 'hardware',
+                'bg-warning' : product.type === 'app',
+                'bg-success' : product.type === 'service'}">
+        {{product.type}}
+    </span>
+    <div class="card-body">
+        <h4 class="prodHead card-title">{{product.name}}</h4>
+        <p>from {{product.dateOpen}} to {{product.dateClose}}</p>
+        <p class="description">{{product.description}}</p>
+        <button class="btn btn-info" [routerLink]="['/product', product.name]">
+            Details
+        </button>
+    </div>
+</div>
